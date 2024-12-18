@@ -6,71 +6,157 @@
     <title>How has digital technology impacted storytelling in contemporary journalism?</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* Base styles */
         body {
             font-family: "Quicksand", Arial, sans-serif;
             line-height: 1.8;
             color: rgba(0, 0, 0, 0.84);
+        }
+
+        .colorlib-narrow-content {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
+
+        /* Typography */
         h1 {
-            font-size: 32px;
-            margin-bottom: 30px;
+            font-size: 42px;
+            line-height: 1.3;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
+
         h2 {
-            font-size: 28px;
+            font-size: 32px;
             margin: 40px 0 30px 0;
+            font-weight: 600;
         }
+
+        h3 {
+            font-size: 24px;
+            margin: 60px 0 30px 0;
+            font-weight: 600;
+        }
+
         p {
             margin-bottom: 20px;
             font-size: 18px;
             text-align: justify;
+            line-height: 1.8;
         }
+
+        /* Blog meta */
+        .blog-meta {
+            color: rgba(0,0,0,0.54);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+
+        .blog-meta span {
+            margin-right: 20px;
+        }
+
+        /* Images */
+        .hero-image-container {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
         .hero-image {
             width: 100%;
-            height: 400px;
+            height: 100%;
             object-fit: cover;
-            margin-bottom: 40px;
         }
-        .content-image {
+
+        .content-image-container {
             width: 100%;
             height: 300px;
-            object-fit: cover;
+            overflow: hidden;
             margin: 40px 0;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+
+        .content-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .image-caption {
             text-align: center;
             font-size: 14px;
-            color: rgba(0, 0, 0, 0.6);
-            margin-top: -30px;
-            margin-bottom: 40px;
+            color: rgba(0,0,0,0.6);
+            margin: 10px 0 30px 0;
+            font-style: italic;
         }
 
-        /* References Section Styles */
-        .references-section {
-            border-top: 1px solid rgba(0,0,0,0.1);
-            margin-top: 60px;
-            padding-top: 40px;
-        }
-
-        .reference-item {
-            margin-bottom: 20px;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .reference-number {
-            position: absolute;
-            left: 0;
-            color: #2c98f0;
-        }
+        /* References */
         .reference-link {
             color: #2c98f0;
-            text-decoration: none;
-            position: relative;
             cursor: pointer;
+            position: relative;
+            text-decoration: none;
+            font-size: 0.8em;
+            vertical-align: super;
         }
+
+        .reference-link:hover {
+            color: #2170b3;
+        }
+
+        .footnotes {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .footnote {
+            display: flex;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .footnote-number {
+            min-width: 30px;
+            font-weight: 600;
+            color: #2c98f0;
+        }
+
+        /* First letter styling */
+        .first-letter {
+            float: left;
+            font-size: 75px;
+            line-height: 60px;
+            padding-top: 4px;
+            padding-right: 8px;
+            padding-left: 3px;
+            font-family: Georgia, serif;
+        }
+
+        /* Emphasis */
+        em {
+            font-style: italic;
+        }
+
+        /* Author image */
+        .author-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Reference tooltips */
         .reference-tooltip {
             display: none;
             position: absolute;
@@ -88,8 +174,44 @@
             transform: translateX(-50%);
             margin-bottom: 10px;
         }
+
         .reference-link:hover .reference-tooltip {
             display: block;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .colorlib-narrow-content {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .hero-image-container {
+                height: 300px;
+            }
+
+            .content-image-container {
+                height: 200px;
+            }
+
+            .blog-meta {
+                font-size: 14px;
+            }
+
+            .footnote {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -108,7 +230,7 @@
                                 
                                 <div class="blog-meta" style="color: rgba(0,0,0,0.54); font-size: 16px; margin-bottom: 32px;">
                                     <span style="margin-right: 20px;">
-                                        <img src="/api/placeholder/40/40" alt="Author" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; vertical-align: middle;">
+                                        <img src="/images/author.png" alt="Author" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; vertical-align: middle;">
                                         <span style="vertical-align: middle;">Wisdom Obinna</span>
                                     </span>
                                     <span style="margin-right: 20px;">Nov 3, 2022</span>
@@ -117,7 +239,7 @@
                             </header>
 
                             <!-- Essay Content -->
-                            <img src="/api/placeholder/800/400" alt="Digital Journalism Landscape" class="hero-image">
+                            <img src="/images/j1" alt="Digital Journalism Landscape" class="hero-image">
                             <p class="image-caption">Modern digital newsroom and storytelling technologies</p>
                     
                             <div class="essay-content">
@@ -125,7 +247,7 @@
 
                                 <p>The shift in storytelling techniques has coincided with the audience's desire for more visually appealing content, with the internet empowering contemporary journalism to distribute content in two or more formats across multiple media platforms. For instance, in 2003, the Pulitzer Prize for feature writing went to the Los Angeles Times' <em>Enrique's Journey</em>, a story made up of only one picture per chapter and a total of six chapters<a href="#note-24" class="reference-link">24</a>. Fast forward a decade later, with the invention of Web 2.0, much has changed. In 2013, the Pulitzer Prize for feature writing went to the New York Times story <em>"Snow Fall"</em>, which was an online story that hovered around one topic from multiple angles, comprising six web chapters with video, audio, interactive graphics, looping videos, and many other digital technological tools<a href="#note-25" class="reference-link">25</a>. Furthermore, the 2022 winner (the Atlantic's <em>'20 Years Gone'</em>) included an audio version of the article published as a podcast on its website, Audm for Apple or Android, and a PDF copy sold on Amazon.com, giving readers the option to read, listen to, or do both at the same time<a href="#note-26" class="reference-link">26</a>. The contrasting elements of these three award-winning stories across twenty years exemplify how digital technology has impacted storytelling in contemporary journalism. While these impacts remain widely spread, this essay will focus on the current internet technology (Web 2.0) and its impact on storytelling.</p>
 
-                                <img src="/api/placeholder/800/300" alt="Web 2.0 Interactive Journalism" class="content-image">
+                                <img src="/images/j2.png" alt="Web 2.0 Interactive Journalism" class="content-image">
                                 <p class="image-caption">Web 2.0 enables interactive journalism and user engagement</p>
                         
 
@@ -134,7 +256,7 @@
 
                                 <p>The New York Times story "Snow Fall: The Avalanche at Tunnel Creek" can be considered as a piece of long-form digital storytelling that evaded the inverted pyramid structure and was more chronological, applying the 'delayed drop' or delayed lead feature<a href="#note-12" class="reference-link">12</a>. The text served as an invitation to readers, helping the audience to form a mental image of the scenes. At the same time, the visual descriptions like the video, interactive graphics, and maps filled up for a mental image of the scenes of the incident<a href="#note-13" class="reference-link">13</a>. Both features significantly contributed to the reader's immersion in different ways: textual descriptions for imaginative processes and visual descriptions for an experiential feeling of the scenes<a href="#note-14" class="reference-link">14</a>. "Snow Fall" connoted a remarkable contribution to storytelling in contemporary journalism due to its comprehensive and immersive features<a href="#note-15" class="reference-link">15</a>.</p>
 
-                                <img src="/api/placeholder/800/300" alt="Modern Journalism Storytelling" class="content-image">
+                                <img src="/images/j3.png" alt="Modern Journalism Storytelling" class="content-image">
                                 
                                 <p class="image-caption">Evolution of storytelling formats in modern journalism</p>
 
